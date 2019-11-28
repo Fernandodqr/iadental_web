@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{%  block main %}
+    Delete:
+<br>
+<form method="POST">
+    {% csrf_token %}
+<h2> Vc esta certo que quer Deltar Pciente? </h2>
+    {{ form }}
+
+    <button type="submit" class="btn btn-danger">Deletar</button>
+</form>
+
+ <br>
+
+{% endblock %}

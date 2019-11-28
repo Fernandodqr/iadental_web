@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%  block main %}
+
+<p><h2>List Pacientes:</h2></p>
+
+    <br>
+
+{% for paciente in object_list %}
+    {{ paciente }}
+    <p>
+    <a href="{% url 'update_paciente' paciente.id %}" class="btn btn-warning">
+          Editar
+    </a>
+    <a href="{% url 'delete_paciente' paciente.id %}" class="btn btn-danger">
+        Deletar
+    </a>
+    </p>
+{% endfor %}
+
+<p>
+    <a href="{% url 'create_paciente' %}" class="btn btn-primary">
+        Novo Paciente
+    </a>
+<br>
+</p>
+
+{% endblock %}
