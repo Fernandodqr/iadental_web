@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%  block main %}
+
+    <h1 class="text-center">Prontuário do Paciente</h1>
+
+<div class="container mp-4 mb-4">
+    <div class="row">
+
+         <div class="col-sm-8">
+            <h3>Informa&ccedil&otildees Pessoais</h3>
+            <p><b>Nome: </b>{{ object.nome }}</p>
+            <p><b>Tel.: </b>{{ object.phone }}</p>
+            <p><b>E-mail: </b>{{ object.email }}</p>
+            <p><b>Cidade: </b>{{ object.City }}</p>
+            <p><b>Dentista: </b>{{ object.dentistas }}</p>
+            <p><b>Clinica: </b>{{ object.clinicas }}</p>
+
+        <div class="padding-bottom: 2px">
+            {% if request.user == paciente.user %}
+                <a href="/paciente/external/{{ paciente.id}}/">
+                    <button type="button" class="btn btn-primary">Marca&ccedil&otildees</button>
+                    <!-- <button type="submit" class="btn btn-primary">Marca&ccedil&otildees</button> -->
+                </a>
+
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal_confirm">Laudo</button>
+
+            {% endif %}
+        </div>
+        </div>
+
+        <div class="col-sm-4">
+
+                {% for imagens in object.imagens_set.all %}
+
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ imagens.arquivo.url }}" width="250" heigt="160" alt="Imagem de capa do card">
+                    <p><div class="card-body">
+                        <h6 class="card-title">Descrição:</h6>
+                        <a href="{{ imagens.arquivo.url }}">{{ imagens }}</a>
+                        <p><br>
+                    <a href="#" class="btn btn-primary">Selecionar</a></p>
+                    </div>
+                </div><br>
+                {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

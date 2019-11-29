@@ -2,13 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic import ListView, UpdateView, DeleteView, CreateView
+from django.views.generic.detail import DetailView
+
 from .models import Paciente, Clinica
 
 
 class PacientesList(ListView):
     model = Paciente
-
-
 #    def get_queryset(self):
 #        clinica_logada = self.request.user.paciente.clinicas
 #        return Paciente.objects.filter(clinica=clinica_logada)
@@ -32,3 +32,6 @@ class PacienteNovo(CreateView):
         paciente.user = User.objects.create(username=username)
         paciente.save()
         return super(PacienteNovo, self).form_valid(form)
+
+class PacienteDetail(DetailView):
+    model = Paciente

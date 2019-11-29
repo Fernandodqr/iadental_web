@@ -1,16 +1,25 @@
 {% extends 'base.html' %}
+{% load bootstrap %}
 
 {%  block main %}
-    Edit:
+
+<h2>Editar Dados:</h2>
 <br>
+<p>
 <form method="POST">
     {% csrf_token %}
 
-    {{ form }}
+    {{ form|bootstrap }}
 
-    <button type="submit">Salva</button>
+    <button type="submit" class="btn btn-primary">Salva</button>
 </form>
-
  <br>
-
+<a href="{% url 'create_image' object.id %}" class="btn btn-success">
+    Adicionar Imagem
+</a>
+<br>
+{% for imagens in object.imagens_set.all %}
+  <a href="{{ imagens.arquivo.url }}">{{ imagens }}</a><br>
+{% endfor %}
+</p>
 {% endblock %}

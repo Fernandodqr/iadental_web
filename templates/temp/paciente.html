@@ -1,0 +1,68 @@
+{% extends "model-page.html" %}
+
+{% block content %}
+
+    <h1 class="text-center">Prontu&aacuterio do Paciente</h1>
+
+<!-- Ini Modal -->
+<div class="modal fade" id="modal_confirm">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Deseja aplicar Diagnostico por IA?</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Modal body..
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container mp-4 mb-4">
+    <div class="row">
+        <div class="col-sm-4">
+            <div style="border-color: black; border-style: solid; width: 356px; height: 195px;">
+                <img src="{{ paciente.imgxray.url }}" width="350" heigt="260" style="margin-top: 16px">
+            </div>
+        </div>
+        
+        <div class="col-sm-8">
+            <h4>Informa&ccedil&otildees</h4>
+            <p><b>Nome: </b>{{ paciente.nome }}</p>
+            <p><b>Tel.: </b>{{ paciente.phone }}</p>
+            <p><b>E-mail: </b>{{ paciente.email }}</p>
+            <p><b>Cidade: </b>{{ paciente.city }}</p>
+
+
+            <div class="padding-bottom: 2px">
+                {% if request.user == paciente.user %}
+
+                <a href="/paciente/external/{{ paciente.id}}/">
+                    <button type="button" class="btn btn-primary">Marca&ccedil&otildees</button>
+                    <!-- <button type="submit" class="btn btn-primary">Marca&ccedil&otildees</button> -->
+                </a>
+
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal_confirm">Laudo</button>
+
+                {% endif %}
+            </div>
+           
+         </div>
+
+    </div>
+</div>
+
+
+
+    {% endblock %}

@@ -17,15 +17,24 @@
     <div class="col-sm">
         <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
             <h2>
-                <i class="fa fa-users" style="font-size:48px;color=blue"></i>
+                <i class="fa fa-hospital-o" style="font-size:48px;color=blue"></i>
             </h2>
-        <div class="card-header">Cabeçalho</div>
+        <div class="card-header">Clinicas</div>
         </div>
 
       Uma de três colunas
     </div>
     <div class="col-sm">
-      Olá {{  usuario.paciente.nome }}
+
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <h2>
+                <i class="fa fa-users" style="font-size:48px;color=blue"></i>
+            </h2>
+            {{  usuario.paciente.nome }}
+        <div class="card-header"><a href="{% url 'list_pacientes' %}">Gerenciar Pacientes</a></div>
+        </div>
+
+        {{  usuario.paciente.nome }}
         <a href="{% url 'list_pacientes' %}">Gerenciar Pacientes</a>
     </div>
     <div class="col-sm">
