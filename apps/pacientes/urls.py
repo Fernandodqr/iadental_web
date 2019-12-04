@@ -1,5 +1,11 @@
 from django.urls import path
-from .views import PacientesList, PacienteEdit, PacienteDelete, PacienteNovo, PacienteDetail
+from apps.pacientes import views
+from .views import (PacientesList,
+                    PacienteEdit,
+                    PacienteDelete,
+                    PacienteNovo,
+                    PacienteDetail
+)
 
 
 urlpatterns = [

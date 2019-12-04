@@ -1,0 +1,14 @@
+item {
+  id: 1
+  name: 'restauracao'
+}
+
+item {
+  id: 2
+  name: 'coroa'
+}
+
+item {
+  id: 3
+  name: 'canal'
+}

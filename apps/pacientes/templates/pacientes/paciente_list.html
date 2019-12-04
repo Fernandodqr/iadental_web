@@ -1,46 +1,25 @@
 {% extends 'base.html' %}
-{% load static %}
+
 
 {%  block main %}
 
 <p><h2>Lista Pacientes:</h2></p>
 <br>
-
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Cidade</th>
-      <th scope="col">Clinica</th>
+      <th scope="col">Nome Paciente</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
 </table>
-
-
-
 {% for paciente in object_list %}
-    {{ paciente }}
+<table class="table">
+<tbody>
+<tr>
+    <td>{{ paciente }}</td>
+</tr>
+</tbody>
+</table>
     <p>
         <a href="{% url 'detail_paciente' paciente.id %}" class="btn btn-secondary">
           Prontuário
