@@ -3,3 +3,4 @@
 django
 *.pyc
 iadental.pem
+iadental_web/__pycache__/
