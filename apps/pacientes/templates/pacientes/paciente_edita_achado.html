@@ -1,0 +1,82 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- Bootstrap core CSS -->
+    <link href="{% static 'bootstrap/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom styles for this template -->
+    <link href="{% static 'bootstrap/css/agency.min.css' %}" rel="stylesheet">
+
+    <title> {% block title %} {% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+{%  block main %}
+
+    <h1 class="text-center">Análise dos Achados em Panorâmica</h1>
+<div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h5 class="text-white h4">Settings</h5>
+      <span class="text-muted">Expansível, atráves da marca no navbar.</span>
+        <a class="dropdown-item" href="#">Ação</a>
+        <a href="javascript: history.go(-1)"> <button type="button" class="btn btn-info">Voltar</button> </a>
+
+        <a href="{% url 'laudo_paciente_html' %}"> <button type="button" class="btn btn-info">Gerar Laudo Html </button> </a>
+
+    </div>
+  </div>
+
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
+
+<div class="container mp-4 mb-4">
+
+    <div class="row">
+        <div class="col-sm-8">
+          <h3 class="text-center">Smart Detect realizada na Técnica de Panorâmica, sugere: </h3>
+          <p><img class="card-img-top" src="/media/detection/analise.png" width="1126" heigt="532" /><br>
+
+        </div>
+        <div class="col-sm-4">
+            <br>
+            <h3 class="text-center">Lista de Achados:</h3>
+            {% for achados in achados %}
+                <p>{{ achados }}<br>
+
+            {% endfor %}
+        </div>
+
+    </div>
+     <div class="padding-bottom: 2px">
+         {% if request.user == paciente.user %}
+
+         <a href="/paciente/laudo/{{ paciente.id}}/">
+            <button type="button" class="btn btn-danger">Gerar Laudo</button>
+         </a>
+
+         {% endif %}
+     </div>
+
+
+</div>
+
+{% endblock %}
+
+

@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load bootstrap %}
 
 {% block main %}
     {% csrf_token %}
     {{ form }}
-    <button type="submit">Salvar</button>
 <br>
+    <button type="submit" class="btn btn-success"> Salvar</button>
+<br><p>
 {% endblock %}

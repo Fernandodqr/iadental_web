@@ -13,3 +13,4 @@ def principal(request):
     data['usuario'] = request.user
     return render(request, 'core/principal.html', data)
 
+

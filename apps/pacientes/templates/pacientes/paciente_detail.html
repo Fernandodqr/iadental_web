@@ -17,30 +17,26 @@
             <p><b>Dentista: </b>{{ object.dentistas }}</p>
             <p><b>Clinica: </b>{{ object.clinicas }}</p>
 
-        <div class="padding-bottom: 2px">
-            {% if request.user == paciente.user %}
-                <a href="/pacientes/detail/external/">
-                    <button type="button" class="btn btn-primary">Marca&ccedil&otildees</button>
-                    <!-- <button type="submit" class="btn btn-primary">Marca&ccedil&otildees</button> -->
-                </a>
+            <div class="padding-bottom: 2px">
 
+                <a href="/pacientes/detect/{{paciente.id}}/">
+                    <button type="button" class="btn btn-primary">Analisar</button>
+
+                </a>
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal_confirm">Laudo</button>
 
-            {% endif %}
-        </div>
+            </div>
         </div>
 
         <div class="col-sm-4">
-
                 {% for imagens in object.imagens_set.all %}
-
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="{{ imagens.arquivo.url }}" width="250" heigt="160" alt="Imagem de capa do card">
                     <p><div class="card-body">
                         <h6 class="card-title">Descrição:</h6>
                         <a href="{{ imagens.arquivo.url }}">{{ imagens }}</a>
                         <p><br>
-                    <a href="#" class="btn btn-primary">Selecionar</a></p>
+                    <a href="/pacientes/detect/{{imagens.id}}/" class="btn btn-primary">Analisar</a></p>
                     </div>
                 </div><br>
                 {% endfor %}

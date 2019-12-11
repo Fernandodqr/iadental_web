@@ -1,0 +1,53 @@
+[33mcommit e4dc60d6875eb91ec8f1f6813d6b0ed232eacfd7[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: fernandodqr <fernandodqr@gmail.com>
+Date:   Thu Dec 5 09:55:32 2019 -0300
+
+    alterado ip elastico
+
+[33mcommit 4ed3a02099ba989760eb854a8a089ae966cb5ac8[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: fernandodqr <fernandodqr@gmail.com>
+Date:   Wed Dec 4 20:07:42 2019 -0300
+
+    alterado sttings and URLs vars
+
+[33mcommit 6dd20a72f428bd4565670b541f5b88b626f979cc[m
+Author: fernandodqr <fernandodqr@gmail.com>
+Date:   Wed Dec 4 19:24:05 2019 -0300
+
+    mod settings com var STATIC_ROOT
+
+[33mcommit 29a388057dcbf8e166877b324895d1dd64d3e1e9[m
+Author: fernandodqr <fernandodqr@gmail.com>
+Date:   Wed Dec 4 16:15:00 2019 -0300
+
+    aws add ip fixo
+
+[33mcommit 79c7dbf5456d2c1fc3ca10ff2a47e0b0d6ada6ac[m
+Author: fernandodqr <fernandodqr@gmail.com>
+Date:   Wed Dec 4 12:21:27 2019 -0300
+
+    versão deploy aws
+
+[33mcommit ea8a6a36adc39ac6bd1b7819cf950a429e3d648c[m
+Author: fernandodqr <fernandodqr@gmail.com>
+Date:   Fri Nov 29 11:29:29 2019 -0300
+
+    chamando telas funcionais
+
+[33mcommit 5f9f8ef5e008b4b188c26a6a26458a2b230f51f4[m
+Author: fernandodqr <fernandodqr@gmail.com>
+Date:   Thu Nov 28 11:48:20 2019 -0300
+
+    models e lista pacientes
+
+[33mcommit d24cfd120780a808a4ffb1e1f715624026c871c7[m
+Author: fernandodqr <fernandodqr@gmail.com>
+Date:   Mon Nov 25 18:07:21 2019 -0300
+
+    criado app e modelagem
+
+[33mcommit cabbca456e858080de4371d09932d830c2c6083f[m
+Author: fernandodqr <fernandodqr@gmail.com>
+Date:   Mon Nov 25 14:57:33 2019 -0300
+
+    inicio proj vazio

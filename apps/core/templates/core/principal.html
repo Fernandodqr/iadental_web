@@ -20,8 +20,11 @@
                 <i class="fa fa-hospital-o" style="font-size:48px;color=blue"></i>
             </h2>
         <div class="card-header">Clinicas</div>
-            {{ usuario.paciente.clinicas }}
-            <a href="">Edita Clinica</a>
+            {% if usuario.paciente.clinicas %}
+                <a href="{% url 'update_clinica' usuario.paciente.clinicas.id %}">Edita Clinica</a>
+            {% else %}
+                <a href="">Add Clinica</a>
+            {% endif %}
         </div>
     </div>
     <div class="col-sm">
@@ -34,7 +37,6 @@
         <div class="card-header"><a href="{% url 'list_pacientes' %}">Gerenciar Pacientes</a></div>
         </div>
 
-        {{  usuario.paciente.nome }}
         <a href="{% url 'list_pacientes' %}">Gerenciar Pacientes</a>
     </div>
     <div class="col-sm">

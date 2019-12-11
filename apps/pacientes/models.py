@@ -8,6 +8,7 @@ from apps.dentista.models import Dentista
 class Paciente(models.Model):
     nome = models.CharField(max_length=100, help_text='Primeiro nome')
     sobrenome = models.CharField(max_length=100, help_text='Sobrenome')
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     aniversario = models.CharField(max_length=100, help_text='Data de Aniversário')
     email = models.EmailField(help_text='Email')
     phone = models.CharField(max_length=100, help_text='Telefone do Paciente')
@@ -16,7 +17,6 @@ class Paciente(models.Model):
     City = models.CharField(max_length=100, help_text='Cidade')
     State = models.CharField(max_length=100, help_text='Estado')
     dentistas = models.ManyToManyField(Dentista)
-    user = models.ForeignKey(User, on_delete=models.PROTECT)
     clinicas = models.ForeignKey(Clinica, on_delete=models.PROTECT)
 
     def get_absolute_url(self):

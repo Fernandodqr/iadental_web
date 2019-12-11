@@ -18,7 +18,7 @@ urlpatterns = [
     path('teste/', APIView.as_view(), name='api_view'),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('pacientes/detail/external/', views.external, name='external'),
+    #path('pacientes/detail/external/', views.external, name='external'),
     path('detect/', api_detection_view, name='detect'),
     #path('', ObjDetectAPI.site.urls),
     #path('', .as_view(), name='detectionAPI'),

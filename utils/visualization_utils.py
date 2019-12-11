@@ -703,6 +703,7 @@ def visualize_boxes_and_labels_on_image_array(
     agnostic_mode=False,
     line_thickness=4,
     groundtruth_box_visualization_color='black',
+    achados_to_display_str={},  # Fernando (06/12/19)
     skip_scores=False,
     skip_labels=False,
     skip_track_ids=False):
@@ -793,6 +794,8 @@ def visualize_boxes_and_labels_on_image_array(
           else:
             display_str = '{}: ID {}'.format(display_str, track_ids[i])
         box_to_display_str_map[box].append(display_str)
+        print('Vis. Display: ', display_str)          # Fernando (06/12/19)
+        achados_to_display_str[i] = str(display_str)  # Fernando
         if agnostic_mode:
           box_to_color_map[box] = 'DarkOrange'
         elif track_ids is not None:
@@ -802,6 +805,8 @@ def visualize_boxes_and_labels_on_image_array(
         else:
           box_to_color_map[box] = STANDARD_COLORS[
               classes[i] % len(STANDARD_COLORS)]
+
+  print('Teste Array: ', achados_to_display_str)
 
   # Draw all boxes onto image.
   for box, color in box_to_color_map.items():
@@ -837,7 +842,7 @@ def visualize_boxes_and_labels_on_image_array(
           radius=line_thickness / 2,
           use_normalized_coordinates=use_normalized_coordinates)
 
-  return image
+  return image, achados_to_display_str
 
 
 def add_cdf_image_summary(values, name):

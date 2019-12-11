@@ -13,18 +13,18 @@
   </thead>
 </table>
 {% for paciente in object_list %}
-<table class="table">
-<tbody>
-<tr>
-    <td>{{ paciente }}</td>
-</tr>
-</tbody>
-</table>
+    <table class="table">
+        <tbody>
+        <tr>
+            <td>{{ paciente }}</td>
+        </tr>
+        </tbody>
+    </table>
     <p>
         <a href="{% url 'detail_paciente' paciente.id %}" class="btn btn-secondary">
           Prontuário
     </a>
-    <a href="{% url 'update_paciente' paciente.id %}" class="btn btn-warning">
+    <a href="{% url 'update_pacientes' paciente.id %}" class="btn btn-warning">
           Editar
     </a>
     <a href="{% url 'delete_paciente' paciente.id %}" class="btn btn-danger">
@@ -34,7 +34,7 @@
 {% endfor %}
 
 <p>
-    <a href="{% url 'create_paciente' %}" class="btn btn-primary">
+    <a href="{% url 'create_pacientes' %}" class="btn btn-primary">
         Novo Paciente
     </a>
 <br>

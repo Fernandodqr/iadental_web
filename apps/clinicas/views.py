@@ -18,4 +18,8 @@ class ClinicaCreate(CreateView):
 
 class ClinicaEdit(UpdateView):
     model = Clinica
-    fields = ['nome']
+    fields = ['nome',
+              'email',
+              'phone',
+              'address'
+]
