@@ -8,7 +8,7 @@ cycler==0.10.0
 Cython==0.29.14
 Django==2.2.7
 django-bootstrap-form==3.4
-djangorestframework==3.10.3
+djangorestframework==3.11.2
 gast==0.2.2
 google-auth==1.7.1
 google-auth-oauthlib==0.4.1
