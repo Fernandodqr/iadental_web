@@ -6,7 +6,7 @@ chardet==3.0.4
 contextlib2==0.6.0.post1
 cycler==0.10.0
 Cython==0.29.14
-Django==2.2.7
+Django==2.2.24
 django-bootstrap-form==3.4
 djangorestframework==3.10.3
 gast==0.2.2
